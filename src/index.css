@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 10%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 30 100% 60%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 25%;
+    --muted-foreground: 180 30% 70%;
+
+    --accent: 185 90% 45%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 20%;
+    --ring: 185 80% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(185, 80%, 50%), hsl(30, 100%, 60%));
+    --gradient-card: linear-gradient(145deg, hsl(220, 20%, 15%), hsl(220, 25%, 18%));
+    --glow-primary: 0 0 40px hsl(185 80% 50% / 0.3);
+    --glow-secondary: 0 0 40px hsl(30 100% 60% / 0.3);
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 185 80% 50%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 30 100% 60%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 25%;
+    --muted-foreground: 180 30% 70%;
+
+    --accent: 185 90% 45%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 20%;
+    --ring: 185 80% 50%;
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 20% 25%;
+    --sidebar-ring: 185 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.cursive-font {
+  font-family: 'Dancing Script', cursive;
+}

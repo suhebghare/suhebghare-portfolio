@@ -1,0 +1,135 @@
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description:
+      "Full-stack e-commerce solution with payment integration, inventory management, and analytics dashboard.",
+    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800",
+    github: "#",
+    live: "#",
+  },
+  {
+    title: "AI Chat Assistant",
+    description:
+      "Intelligent chatbot powered by machine learning, featuring natural language processing and context awareness.",
+    tech: ["Python", "TensorFlow", "FastAPI", "React"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    github: "#",
+    live: "#",
+  },
+  {
+    title: "Task Management App",
+    description:
+      "Collaborative project management tool with real-time updates, drag-and-drop interface, and team analytics.",
+    tech: ["TypeScript", "Next.js", "Prisma", "WebSocket"],
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800",
+    github: "#",
+    live: "#",
+  },
+];
+
+const Projects = () => {
+  return (
+    <div className="min-h-screen pt-24 pb-16 px-6">
+      <div className="container mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Featured Projects
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-body">
+            A showcase of my recent work and creative experiments
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+            >
+              <Card className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-500 h-full flex flex-col justify-between">
+                <div className="relative overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-muted-foreground font-body leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-xs font-body bg-primary/10 text-primary rounded-full border border-primary/30"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3 pt-4">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 border-primary/50 hover:bg-primary/10"
+                      asChild
+                    >
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="flex-1 bg-primary hover:bg-primary/90"
+                      asChild
+                    >
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
