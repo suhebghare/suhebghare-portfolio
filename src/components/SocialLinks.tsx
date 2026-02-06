@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:safwanghare44@gmail.com", label: "Email" },
+  { icon: Github, href: "https://github.com/suhebghare/", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/suhebghare/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/SuhebG", label: "Twitter" },
+  { icon: Mail, href: "mailto:suhebgharedxb@gmail.com", label: "Email" },
 ];
 
 export const SocialLinks = () => {

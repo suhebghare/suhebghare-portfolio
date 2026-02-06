@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Sparkles, Code2, Palette, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import developerImage from "@/assets/developer-portrait.jpg";
 import { SocialLinks } from "@/components/SocialLinks";
 
 const Home = () => {
@@ -128,7 +127,7 @@ const IntroOverlay = () => {
               backgroundPosition: { delay: 2.2, duration: 3, repeat: Infinity },
             }}
           >
-            Devops Enginear
+            SRE & DevOps Engineer
           </motion.p>
         </div>
 
@@ -245,7 +244,7 @@ const MainContent = () => {
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
               <img
-                src={developerImage}
+                src="/suheb.jpeg"
                 alt="Suheb Ghare"
                 className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-2xl"
               />
@@ -293,7 +292,7 @@ const MainContent = () => {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Creative
+              SRE &
             </motion.span>{" "}
             <motion.span
               className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent inline-block"
@@ -307,7 +306,7 @@ const MainContent = () => {
               }}
               style={{ backgroundSize: "200% auto" }}
             >
-              Developer
+              DevOps Engineer
             </motion.span>
           </motion.h1>
 
@@ -317,9 +316,9 @@ const MainContent = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            Crafting exceptional digital experiences through elegant code and
-            innovative design. Specializing in full-stack development with a
-            passion for modern technologies.
+            Building reliable, scalable infrastructure and automating everything.
+            Specializing in cloud architecture, CI/CD pipelines, and ensuring
+            99.9% uptime with modern DevOps practices.
           </motion.p>
 
           {/* Animated stat cards */}
@@ -330,9 +329,9 @@ const MainContent = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12"
           >
             {[
-              { icon: Code2, label: "Projects", value: "50+" },
-              { icon: Zap, label: "Technologies", value: "20+" },
-              { icon: Palette, label: "Designs", value: "100+" },
+              { icon: Code2, label: "Deployments", value: "500+" },
+              { icon: Zap, label: "Uptime", value: "99.9%" },
+              { icon: Palette, label: "Pipelines", value: "50+" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -393,8 +392,8 @@ const MainContent = () => {
               size="lg"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/cv.pdf";
-                link.download = "Suheb_Ghare_CV.pdf";
+                link.href = "/Suheb-Ghare-resume.pdf";
+                link.download = "Suheb-Ghare-resume.pdf";
                 link.click();
               }}
               className="group relative overflow-hidden bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-lg font-body shadow-xl"

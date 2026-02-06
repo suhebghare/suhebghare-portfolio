@@ -1,47 +1,19 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, MapPin, Send, Linkedin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
-
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    const mailtoLink = `mailto:suhebgharedxb@gmail.com?subject=Message from ${name}&body=${message}%0D%0A%0D%0AFrom: ${name}%0D%0AEmail: ${email}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -84,17 +56,35 @@ const Contact = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "safwanghare44@gmail.com",
+                  value: "suhebgharedxb@gmail.com",
+                  link: "mailto:suhebgharedxb@gmail.com",
                 },
-                { icon: Phone, label: "Phone", value: "+91 9130818271" },
+                { 
+                  icon: Phone, 
+                  label: "Phone", 
+                  value: "+971-58-2362962",
+                  link: "tel:+971582362962",
+                },
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "Mumbai , Maharashtra , India",
+                  value: "Dubai, UAE",
+                },
+                {
+                  icon: Linkedin,
+                  label: "LinkedIn",
+                  value: "linkedin.com/in/suhebghare",
+                  link: "https://www.linkedin.com/in/suhebghare",
+                },
+                {
+                  icon: MessageCircle,
+                  label: "WhatsApp",
+                  value: "Connect on WhatsApp",
+                  link: "https://wa.me/+971582362962",
                 },
               ].map((item, index) => {
                 const Icon = item.icon;
-                return (
+                const content = (
                   <motion.div
                     key={item.label}
                     initial={{ opacity: 0, x: -20 }}
@@ -113,6 +103,14 @@ const Contact = () => {
                     </div>
                   </motion.div>
                 );
+                
+                return item.link ? (
+                  <a key={item.label} href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                    {content}
+                  </a>
+                ) : (
+                  content
+                );
               })}
             </div>
           </motion.div>
@@ -126,11 +124,8 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
+                  name="name"
                   placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
                   required
                   className="bg-card border-border focus:border-primary transition-colors"
                 />
@@ -139,11 +134,8 @@ const Contact = () => {
               <div>
                 <Input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
                   required
                   className="bg-card border-border focus:border-primary transition-colors"
                 />
@@ -151,11 +143,8 @@ const Contact = () => {
 
               <div>
                 <Textarea
+                  name="message"
                   placeholder="Your Message"
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
                   required
                   rows={6}
                   className="bg-card border-border focus:border-primary transition-colors resize-none"
@@ -164,11 +153,10 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-background font-body text-lg py-6 group"
               >
                 <span className="flex items-center gap-2">
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  Send Message
                   <Send className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
               </Button>

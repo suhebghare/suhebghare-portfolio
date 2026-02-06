@@ -1,39 +1,31 @@
 import { motion } from "framer-motion";
-import { Award, Trophy, Star, Medal } from "lucide-react";
+import { Star, Medal } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const awards = [
   {
-    icon: Trophy,
-    title: "Best Developer Award 2023",
-    organization: "Tech Innovations Inc.",
-    year: "2023",
-    description: "Recognized for exceptional performance and innovative solutions in full-stack development.",
-    color: "from-primary to-primary/60",
-  },
-  {
     icon: Star,
     title: "AWS Certified Solutions Architect",
     organization: "Amazon Web Services",
-    year: "2022",
+    year: "2023",
     description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
     color: "from-secondary to-secondary/60",
   },
   {
-    icon: Medal,
-    title: "Hackathon Winner",
-    organization: "Global Code Challenge",
-    year: "2021",
-    description: "First place in international coding competition with innovative AI-powered solution.",
-    color: "from-accent to-accent/60",
+    icon: Star,
+    title: "AWS Certified Cloud Practitioner",
+    organization: "Amazon Web Services",
+    year: "2023",
+    description: "Foundational certification demonstrating cloud computing knowledge and AWS services expertise.",
+    color: "from-primary to-primary/60",
   },
   {
-    icon: Award,
-    title: "Google Cloud Professional",
-    organization: "Google Cloud",
-    year: "2021",
-    description: "Certification in cloud architecture and implementation on Google Cloud Platform.",
-    color: "from-primary to-secondary",
+    icon: Medal,
+    title: "Hackathon Winner",
+    organization: "College Hackathon",
+    year: "2017",
+    description: "First place in college coding competition with innovative technical solution.",
+    color: "from-accent to-accent/60",
   },
 ];
 
@@ -108,10 +100,10 @@ const Awards = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { label: "Awards", value: "12+" },
-            { label: "Certifications", value: "8" },
-            { label: "Projects", value: "50+" },
-            { label: "Years Experience", value: "5+" },
+            { label: "Certifications", value: "2" },
+            { label: "Awards", value: "5" },
+            { label: "Projects", value: "25+" },
+            { label: "Years Experience", value: "8+" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

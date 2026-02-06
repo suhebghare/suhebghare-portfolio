@@ -1,30 +1,54 @@
 import { motion } from "framer-motion";
-import { Code2, Database, Palette, Zap } from "lucide-react";
+import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell } from "lucide-react";
 
 const skillCategories = [
   {
-    icon: Code2,
-    title: "Frontend Development",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "Vue.js"],
+    icon: Cloud,
+    title: "Cloud Technologies",
+    skills: ["AWS", "GCP", "EC2", "S3", "Lambda", "CloudFront", "CloudWatch", "VPC", "IAM", "EKS", "ECS"],
     color: "from-primary to-primary/60",
   },
   {
-    icon: Database,
-    title: "Backend & Database",
-    skills: ["Node.js", "PostgreSQL", "MongoDB", "Supabase", "Express", "GraphQL"],
+    icon: Container,
+    title: "Containerization & Orchestration",
+    skills: ["Docker", "Kubernetes", "EKS", "ECS", "Helm", "GitOps", "ArgoCD", "KEDA", "Karpenter"],
     color: "from-secondary to-secondary/60",
   },
   {
-    icon: Palette,
-    title: "Design & UX",
-    skills: ["Figma", "Adobe XD", "UI/UX Design", "Responsive Design", "Animation", "Prototyping"],
+    icon: GitBranch,
+    title: "CI/CD & Version Control",
+    skills: ["Jenkins", "GitHub Actions", "GitLab CI/CD", "Code Pipeline", "Git"],
     color: "from-accent to-accent/60",
   },
   {
-    icon: Zap,
-    title: "Tools & Others",
-    skills: ["Git", "Docker", "AWS", "CI/CD", "Jest", "Webpack"],
+    icon: Gauge,
+    title: "Monitoring & Logging",
+    skills: ["CloudWatch", "NewRelic", "Grafana Cloud", "Prometheus", "ELK Stack", "PagerDuty"],
     color: "from-primary to-secondary",
+  },
+  {
+    icon: Server,
+    title: "Databases & Storage",
+    skills: ["RDS", "PostgreSQL", "DynamoDB", "DocumentDB", "MySQL", "Redis", "S3"],
+    color: "from-secondary to-accent",
+  },
+  {
+    icon: Shield,
+    title: "Infrastructure & Configuration",
+    skills: ["Terraform", "CloudFormation", "Ansible", "Serverless", "Infrastructure as Code", "Linux"],
+    color: "from-accent to-primary",
+  },
+  {
+    icon: Users,
+    title: "SDLC & Project Management",
+    skills: ["Jira", "Confluence", "Agile", "Scrum", "DevOps Practices"],
+    color: "from-primary to-accent",
+  },
+  {
+    icon: Bell,
+    title: "Collaboration Tools",
+    skills: ["Slack", "PagerDuty", "Git", "Documentation"],
+    color: "from-secondary to-primary",
   },
 ];
 
@@ -39,10 +63,10 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Skills & Expertise
+            Technical Skills
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-body">
-            Technologies and tools I work with to bring ideas to life
+            DevOps tools and technologies I use to build reliable infrastructure
           </p>
         </motion.div>
 
@@ -98,18 +122,18 @@ const Skills = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-xl shadow-accent/10"
         >
-          <h2 className="text-3xl font-display font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Proficiency Overview</h2>
+          <h2 className="text-3xl font-display font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Core Competencies</h2>
           <div className="space-y-6">
-            {["Full-Stack Development", "UI/UX Design", "Problem Solving", "Team Collaboration"].map((skill, index) => (
+            {["Infrastructure as Code", "CI/CD Pipeline Design", "System Reliability", "Microservices Architecture", "EKS & Container Orchestration", "AI/ML Infrastructure", "AWS Cost Optimization"].map((skill, index) => (
               <div key={skill}>
                 <div className="flex justify-between mb-2">
                   <span className="font-body text-foreground">{skill}</span>
-                  <span className="font-body text-primary">{95 - index * 5}%</span>
+                  <span className="font-body text-primary">99%</span>
                 </div>
                 <div className="h-3 bg-background rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${95 - index * 5}%` }}
+                    animate={{ width: "99%" }}
                     transition={{ delay: 1 + index * 0.2, duration: 1, ease: "easeOut" }}
                     className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
                   />

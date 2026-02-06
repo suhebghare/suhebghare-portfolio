@@ -5,30 +5,57 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "AWS Infrastructure Automation",
     description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and analytics dashboard.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800",
-    github: "#",
+      "Automated AWS infrastructure deployment using Terraform. Includes VPC, EC2, RDS, S3, CloudFront, and Lambda with complete CI/CD integration.",
+    tech: ["Terraform", "AWS", "Jenkins", "Python", "CloudWatch"],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+    github: "https://github.com/suhebghare",
     live: "#",
   },
   {
-    title: "AI Chat Assistant",
+    title: "Kubernetes Cluster Setup",
     description:
-      "Intelligent chatbot powered by machine learning, featuring natural language processing and context awareness.",
-    tech: ["Python", "TensorFlow", "FastAPI", "React"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    github: "#",
+      "Production-ready Kubernetes cluster with monitoring, logging, and auto-scaling. Deployed microservices with Helm charts and ArgoCD.",
+    tech: ["Kubernetes", "Docker", "Helm", "Prometheus", "Grafana"],
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800",
+    github: "https://github.com/suhebghare",
     live: "#",
   },
   {
-    title: "Task Management App",
+    title: "CI/CD Pipeline with Jenkins",
     description:
-      "Collaborative project management tool with real-time updates, drag-and-drop interface, and team analytics.",
-    tech: ["TypeScript", "Next.js", "Prisma", "WebSocket"],
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800",
-    github: "#",
+      "End-to-end CI/CD pipeline with automated testing, security scanning, Docker image building, and deployment to Kubernetes.",
+    tech: ["Jenkins", "Docker", "SonarQube", "Trivy", "Kubernetes"],
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800",
+    github: "https://github.com/suhebghare",
+    live: "#",
+  },
+  {
+    title: "Monitoring Stack Implementation",
+    description:
+      "Complete observability solution with Prometheus for metrics, Grafana for visualization, and ELK stack for centralized logging.",
+    tech: ["Prometheus", "Grafana", "Elasticsearch", "Logstash", "Kibana"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    github: "https://github.com/suhebghare",
+    live: "#",
+  },
+  {
+    title: "Infrastructure as Code",
+    description:
+      "Multi-cloud infrastructure management using Terraform and Ansible. Automated provisioning and configuration management across AWS and Azure.",
+    tech: ["Terraform", "Ansible", "AWS", "Azure", "Python"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    github: "https://github.com/suhebghare",
+    live: "#",
+  },
+  {
+    title: "GitOps Workflow",
+    description:
+      "Implemented GitOps practices using ArgoCD for automated application deployment. Git as single source of truth for declarative infrastructure.",
+    tech: ["ArgoCD", "Kubernetes", "Helm", "Git", "GitHub Actions"],
+    image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800",
+    github: "https://github.com/suhebghare",
     live: "#",
   },
 ];
@@ -44,10 +71,10 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Featured Projects
+            Infrastructure Projects
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-body">
-            A showcase of my recent work and creative experiments
+            DevOps and SRE projects showcasing automation and reliability
           </p>
         </motion.div>
 

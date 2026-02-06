@@ -4,20 +4,12 @@ import { Card } from "@/components/ui/card";
 
 const education = [
   {
-    degree: "Master of Computer Science",
-    school: "Stanford University",
-    location: "Stanford, CA",
-    period: "2020 - 2022",
-    description: "Specialized in Artificial Intelligence and Machine Learning. Graduated with honors.",
-    achievements: ["GPA: 3.9/4.0", "Research in Deep Learning", "Teaching Assistant for CS101"],
-  },
-  {
-    degree: "Bachelor of Science in Software Engineering",
-    school: "MIT",
-    location: "Cambridge, MA",
-    period: "2016 - 2020",
-    description: "Focused on full-stack development and software architecture. Active member of coding clubs.",
-    achievements: ["GPA: 3.8/4.0", "Dean's List all semesters", "Led university hackathon team"],
+    degree: "Bachelor of Engineering in Computer Science",
+    school: "Mumbai University",
+    location: "MPCOE, Ratnagiri, Maharashtra, India",
+    period: "2013 - 2017",
+    description: "Focused on computer science fundamentals, software engineering, and system design. Built strong foundation in programming and technology.",
+    achievements: ["Computer Science Engineering", "Technical Project Development", "Software Development Skills"],
   },
 ];
 
