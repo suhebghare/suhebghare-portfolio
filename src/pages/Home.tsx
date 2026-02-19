@@ -46,7 +46,7 @@ const Home = () => {
 const IntroOverlay = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary to-secondary overflow-hidden"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden"
       initial={{ y: "-100%" }}
       animate={{ y: "0%" }}
       exit={{ y: "-100%" }}
@@ -57,7 +57,7 @@ const IntroOverlay = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-accent/30 rounded-full"
+            className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -77,39 +77,30 @@ const IntroOverlay = () => {
       </div>
 
       <div className="text-center p-4 relative z-10">
-        <div className="overflow-hidden mb-6">
+        <div className="mb-6 pb-4">
           <motion.h1
-            className="text-7xl md:text-9xl font-black cursive-font tracking-tight"
-            style={{
-              background: "linear-gradient(90deg, #FFD700, #FFA500, #FFD700)",
-              backgroundSize: "200% auto",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+            className="text-7xl md:text-9xl font-black cursive-font tracking-tight text-white"
             initial={{ x: "-120%", opacity: 0, rotateY: -90 }}
             animate={{
               x: "0%",
               opacity: 1,
               rotateY: 0,
-              backgroundPosition: ["0% center", "200% center"],
             }}
             transition={{
               x: { delay: 0.5, duration: 1.5, ease: "easeOut" },
               opacity: { delay: 0.5, duration: 1.5 },
               rotateY: { delay: 0.5, duration: 1.5 },
-              backgroundPosition: { delay: 1.2, duration: 3, repeat: Infinity },
             }}
           >
             Suheb Ghare
           </motion.h1>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="pb-4">
           <motion.p
             className="text-3xl md:text-5xl cursive-font tracking-wider"
             style={{
-              background: "linear-gradient(90deg, #FFD700, #FFA500, #FFD700)",
+              background: "linear-gradient(90deg, hsl(185 80% 60%), hsl(30 100% 65%), hsl(185 80% 60%))",
               backgroundSize: "200% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -142,19 +133,19 @@ const IntroOverlay = () => {
             animate={{ rotate: 360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           >
-            <Code2 className="w-8 h-8 text-accent" />
+            <Code2 className="w-8 h-8 text-cyan-400" />
           </motion.div>
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           >
-            <Palette className="w-8 h-8 text-accent" />
+            <Palette className="w-8 h-8 text-orange-400" />
           </motion.div>
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <Zap className="w-8 h-8 text-accent" />
+            <Zap className="w-8 h-8 text-cyan-400" />
           </motion.div>
         </motion.div>
       </div>
