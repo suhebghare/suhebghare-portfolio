@@ -414,6 +414,24 @@ const MainContent = () => {
                 transition={{ duration: 0.3 }}
               />
             </Button>
+
+            <Link to="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="group relative overflow-hidden border-primary/50 hover:bg-primary/10 px-8 py-6 text-lg font-body shadow-xl"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Contact Me
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.div>
+                </span>
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

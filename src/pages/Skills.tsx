@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell } from "lucide-react";
+import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const skillCategories = [
   {
@@ -141,6 +143,25 @@ const Skills = () => {
               </div>
             ))}
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="flex justify-center mt-12"
+        >
+          <Link to="/education">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-background px-8 py-6 text-lg font-body shadow-xl"
+            >
+              <span className="flex items-center gap-2">
+                View Education
+                <ArrowRight className="w-5 h-5" />
+              </span>
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </div>

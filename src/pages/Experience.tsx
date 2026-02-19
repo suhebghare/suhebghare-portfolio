@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { Briefcase, Calendar } from "lucide-react";
+import { Briefcase, Calendar, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const experiences = [
   {
@@ -139,6 +141,25 @@ const Experience = () => {
             ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="flex justify-center mt-12"
+        >
+          <Link to="/awards">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-background px-8 py-6 text-lg font-body shadow-xl"
+            >
+              <span className="flex items-center gap-2">
+                View Awards
+                <ArrowRight className="w-5 h-5" />
+              </span>
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </div>
   );

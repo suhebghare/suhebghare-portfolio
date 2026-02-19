@@ -12,6 +12,7 @@ import Education from "./pages/Education";
 import Experience from "./pages/Experience";
 import Awards from "./pages/Awards";
 import Contact from "./pages/Contact";
+import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/experience" element={<Experience />} />
             <Route path="/awards" element={<Awards />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blogs" element={<Blogs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

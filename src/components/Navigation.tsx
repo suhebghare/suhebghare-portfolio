@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Download,
+  BookOpen,
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
@@ -24,6 +25,7 @@ const navItems = [
   { path: "/experience", label: "Experience", icon: Briefcase },
   { path: "/awards", label: "Awards", icon: Award },
   { path: "/contact", label: "Contact", icon: Mail },
+  { path: "/blogs", label: "Blogs", icon: BookOpen },
 ];
 
 export const Navigation = () => {
