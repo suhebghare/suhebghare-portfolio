@@ -235,7 +235,7 @@ const MainContent = () => {
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
               <img
-                src="/suheb.jpeg"
+                src="/suheb-ai.png"
                 alt="Suheb Ghare"
                 className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-2xl"
               />
