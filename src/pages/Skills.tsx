@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell, ArrowRight } from "lucide-react";
+import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell, ArrowRight, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -51,6 +51,12 @@ const skillCategories = [
     title: "Collaboration Tools",
     skills: ["Slack", "PagerDuty", "Git", "Documentation"],
     color: "from-secondary to-primary",
+  },
+  {
+    icon: Bot,
+    title: "AI / LLM & Agentic AI",
+    skills: ["OpenAI API", "Claude (Anthropic)", "LangChain", "LangGraph", "MCP (Model Context Protocol)", "Agentic AI", "RAG", "Prompt Engineering", "AI Agents", "GitHub Copilot", "Cursor", "Ollama", "Hugging Face"],
+    color: "from-cyan-500 to-cyan-300",
   },
 ];
 
@@ -117,27 +123,50 @@ const Skills = () => {
           })}
         </div>
 
-        {/* Animated Progress Bars */}
+        {/* Core Competencies */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-xl shadow-accent/10"
         >
-          <h2 className="text-3xl font-display font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Core Competencies</h2>
-          <div className="space-y-6">
-            {["Infrastructure as Code", "CI/CD Pipeline Design", "System Reliability", "Microservices Architecture", "EKS & Container Orchestration", "AI/ML Infrastructure", "AWS Cost Optimization"].map((skill, index) => (
-              <div key={skill}>
-                <div className="flex justify-between mb-2">
-                  <span className="font-body text-foreground">{skill}</span>
-                  <span className="font-body text-primary">99%</span>
+          <h2 className="text-3xl font-display font-bold mb-2 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Core Competencies
+          </h2>
+          <p className="text-center text-muted-foreground text-sm font-body mb-10">
+            Depth of hands-on production experience across key disciplines
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-7">
+            {[
+              // SRE / DevOps core — original, kept at 100%
+              { label: "Production Reliability & SRE",          pct: 100, color: "from-primary to-secondary" },
+              { label: "AWS Cloud Architecture",                pct: 100, color: "from-primary to-secondary" },
+              { label: "Kubernetes & EKS Platform Engineering", pct: 100, color: "from-primary to-secondary" },
+              { label: "CI/CD Pipeline Design & GitOps",        pct: 100, color: "from-primary to-secondary" },
+              { label: "Infrastructure as Code (Terraform)",    pct: 100, color: "from-primary to-secondary" },
+              { label: "Observability & Alerting Strategy",     pct: 100, color: "from-primary to-secondary" },
+              { label: "AWS FinOps & Cost Optimization",        pct: 100, color: "from-primary to-secondary" },
+              { label: "Disaster Recovery & Backup Design",     pct: 100, color: "from-primary to-secondary" },
+              { label: "Security Hardening & WAF",              pct: 100, color: "from-primary to-secondary" },
+              { label: "Linux Systems & Shell Automation",      pct: 100, color: "from-primary to-secondary" },
+              // AI / LLM — newly added
+              { label: "AI Agents & Agentic Workflows",         pct: 95, color: "from-cyan-500 to-cyan-300" },
+              { label: "LLM Integration (OpenAI / Claude)",     pct: 93, color: "from-cyan-500 to-cyan-300" },
+              { label: "MCP & Tool-Use Patterns",               pct: 90, color: "from-cyan-500 to-cyan-300" },
+              { label: "AI-Assisted DevOps & Vibe Coding",      pct: 97, color: "from-cyan-500 to-cyan-300" },
+            ].map(({ label, pct, color }, index) => (
+              <div key={label}>
+                <div className="flex justify-between mb-1.5">
+                  <span className="font-body text-sm text-foreground">{label}</span>
+                  <span className="font-body text-xs text-primary font-semibold">{pct}%</span>
                 </div>
-                <div className="h-3 bg-background rounded-full overflow-hidden">
+                <div className="h-2.5 bg-background rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "99%" }}
-                    transition={{ delay: 1 + index * 0.2, duration: 1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                    animate={{ width: `${pct}%` }}
+                    transition={{ delay: 1 + index * 0.08, duration: 0.9, ease: "easeOut" }}
+                    className={`h-full bg-gradient-to-r ${color} rounded-full`}
                   />
                 </div>
               </div>
