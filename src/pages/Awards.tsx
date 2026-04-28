@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Star, Medal } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { setPageMeta } from "@/lib/seo";
 
 const awards = [
   {
@@ -30,6 +32,13 @@ const awards = [
 ];
 
 const Awards = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Awards & Certifications | Suheb Ghare — AWS Certified",
+      "Suheb Ghare is AWS Certified Solutions Architect and AWS Cloud Practitioner with 8+ years of DevOps and SRE experience.",
+      "https://suhebghare.tech/awards"
+    );
+  }, []);
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-6xl">

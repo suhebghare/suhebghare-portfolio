@@ -4,9 +4,18 @@ import { ArrowRight, Sparkles, Code2, Palette, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "@/components/SocialLinks";
+import { setPageMeta } from "@/lib/seo";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setPageMeta(
+      "Suheb Ghare | Senior SRE & DevOps Engineer | AWS · Kubernetes · AI",
+      "Suheb Ghare is a Senior SRE and DevOps Engineer with 7+ years of experience in AWS, Kubernetes, GitOps, CI/CD, Observability, FinOps, and AI-powered DevOps automation. Based in Dubai, UAE.",
+      "https://suhebghare.tech/"
+    );
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 3500);

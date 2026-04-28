@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight, Bot, Shield, Activity, GitBranch, Server, Database, Cloud, Zap, Lock, BarChart3, RefreshCw, Cpu } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { setPageMeta } from "@/lib/seo";
 
 type Project = {
   title: string;
@@ -340,6 +342,13 @@ const categoryColors: Record<string, string> = {
 };
 
 const Projects = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Infrastructure Projects | Suheb Ghare — SRE & DevOps Engineer",
+      "Real-world DevOps and SRE projects across Mumzworld, Nesto/WIG, and Al Kabeer. EKS, GitOps, CI/CD, Observability, FinOps, Disaster Recovery, AI Agents, and more.",
+      "https://suhebghare.tech/projects"
+    );
+  }, []);
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-7xl">

@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Briefcase, Calendar, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { setPageMeta } from "@/lib/seo";
 
 const experiences = [
   {
@@ -62,8 +64,14 @@ const experiences = [
 ];
 
 const Experience = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Work Experience | Suheb Ghare — Senior SRE & DevOps Engineer",
+      "7+ years of SRE and DevOps experience at Mumzworld, Western International Group, and Al Kabeer. AWS, Kubernetes, GitOps, CI/CD, Terraform, and production reliability.",
+      "https://suhebghare.tech/experience"
+    );
+  }, []);
   return (
-    <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { setPageMeta } from "@/lib/seo";
 
 const Blogs = () => {
+  useEffect(() => {
+    setPageMeta(
+      "DevOps & SRE Blog | Suheb Ghare",
+      "Technical blog by Suheb Ghare covering Kubernetes, AWS, CI/CD, Terraform, Grafana, SRE practices, and AI-powered DevOps automation.",
+      "https://suhebghare.tech/blogs"
+    );
+  }, []);
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-5xl">

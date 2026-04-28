@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Cloud, Server, GitBranch, Container, Shield, Gauge, Users, Bell, ArrowRight, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { setPageMeta } from "@/lib/seo";
 
 const skillCategories = [
   {
@@ -61,6 +63,13 @@ const skillCategories = [
 ];
 
 const Skills = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Technical Skills | Suheb Ghare — AWS, Kubernetes, Terraform, AI",
+      "Full technical skill set of Suheb Ghare: AWS, Kubernetes, EKS, ArgoCD, Terraform, Grafana, Prometheus, CI/CD, LangChain, OpenAI, and AI-powered DevOps.",
+      "https://suhebghare.tech/skills"
+    );
+  }, []);
   return (
     <div className="min-h-screen pt-24 pb-16 px-6 bg-gradient-to-b from-background via-background/95 to-muted/30">
       <div className="container mx-auto max-w-7xl">

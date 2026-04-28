@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Linkedin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { setPageMeta } from "@/lib/seo";
 
 const Contact = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Contact Suheb Ghare | Senior SRE & DevOps Engineer — Dubai, UAE",
+      "Get in touch with Suheb Ghare, Senior SRE and DevOps Engineer based in Dubai, UAE. Available for new opportunities, collaborations, and consulting.",
+      "https://suhebghare.tech/contact"
+    );
+  }, []);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);

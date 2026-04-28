@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { setPageMeta } from "@/lib/seo";
 
 const education = [
   {
@@ -16,6 +18,13 @@ const education = [
 ];
 
 const Education = () => {
+  useEffect(() => {
+    setPageMeta(
+      "Education | Suheb Ghare — Computer Science Engineer",
+      "Suheb Ghare holds a Bachelor of Engineering in Computer Science from Mumbai University (MPCOE, Ratnagiri) and is AWS Certified Solutions Architect.",
+      "https://suhebghare.tech/education"
+    );
+  }, []);
   return (
     <div className="min-h-screen pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-5xl">
